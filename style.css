@@ -1,0 +1,17 @@
+.item-done p{
+    text-decoration: line-through;
+}
+
+
+li {
+    display: flex;
+    flex-direction: row; /* Default */
+    align-items: center;
+}
+
+
+.task-content {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+}
