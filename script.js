@@ -1,5 +1,7 @@
 window.onload = () => {
-    document.querySelector("input").value = "";
+    let input = document.getElementById("taskInput");
+    input.value = "";
+    input.focus();
 }
 
 function createTask(taskContent) {
