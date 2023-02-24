@@ -14,7 +14,7 @@ function createTask(taskContent) {
 
     let text = document.createElement("p");
     text.setAttribute("class", "task-content");
-    text.setAttribute("content-editable", "true");
+    text.setAttribute("contenteditable", "true");
     text.textContent = taskContent;
     task.appendChild(text);
 
