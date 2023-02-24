@@ -5,7 +5,7 @@ window.onload = () => {
 }
 
 function createTask(taskContent) {
-    let task = document.createElement("li");
+    let task = document.createElement("li")
     
     let checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
@@ -21,8 +21,19 @@ function createTask(taskContent) {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Supprimer";
     deleteButton.setAttribute("class", "delete-button");
+    deleteButton.addEventListener ("click", () => {
+        task.remove();
+    });
     task.appendChild(deleteButton);
     
+    task.addEventListener("click", () => {
+        if (checkbox.checked) {
+            text.setAttribute("class", "task-content item-done");
+        }
+        else {
+            text.setAttribute("class", "task-content");
+        }
+    });
     return task;
 }
 
