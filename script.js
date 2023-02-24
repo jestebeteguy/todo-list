@@ -6,7 +6,10 @@ window.onload = () => {
 
 function createTask(taskContent) {
     let task = document.createElement("li")
-    
+    let tasks = document.getElementsByTagName("li");
+    let id = tasks.length + 1;
+    task.setAttribute("id", String(id));
+
     let checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("class", "checkbox");
@@ -23,6 +26,11 @@ function createTask(taskContent) {
     deleteButton.setAttribute("class", "delete-button");
     deleteButton.addEventListener ("click", () => {
         task.remove();
+        n = 1;
+        let tasks = document.getElementsByTagName("li");
+        for (let i = 0; i < tasks.length;++i) {
+            tasks[i].setAttribute("id", String(n++));
+        }
     });
     task.appendChild(deleteButton);
     
@@ -36,7 +44,6 @@ function createTask(taskContent) {
     });
     return task;
 }
-
 
 function addTask() {
     let input = document.querySelector("input");
